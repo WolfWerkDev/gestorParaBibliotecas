@@ -19,8 +19,8 @@ El sistema permite administrar usuarios, administradores y libros en una bibliot
 ## Instalación y Configuración
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/tu-repo/sistema-biblioteca.git
-   cd sistema-biblioteca
+   git clone https://github.com/SammAPH/gestorParaBibliotecas.git
+   cd gestorParaBibliotecas
    ```
 
 2. **Compilar y ejecutar el backend**
