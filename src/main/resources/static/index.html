@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Libros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Libros</h1>
+    </header>
+
+    <div class="container">
+        <section id="users">
+            <h2 onclick="toggleList('userList')">Lista de Usuarios ▼</h2>
+            <ul id="userList" class="hidden"></ul>
+        </section>
+        
+        <section id="admins">
+            <h2 onclick="toggleList('adminList')">Lista de Administradores ▼</h2>
+            <ul id="adminList" class="hidden"></ul>
+        </section>
+        
+
+        <section id="books">
+            <h2>Lista de Libros</h2>
+            <ul id="bookList"></ul>
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025 Samm&. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+</html>

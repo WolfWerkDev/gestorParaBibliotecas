@@ -1,0 +1,166 @@
+/* Reglas generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+}
+
+/* Encabezado */
+#nombreUsuario {
+    background-color: #34495e; /* Azul oscuro (mismo que el footer) */
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 2rem; /* Tamaño mayor para que ocupe más espacio */
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
+    margin-bottom: 1.5rem;
+}
+
+h1, h2 {
+    color: #2c3e50; /* Color similar al del encabezado */
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s;
+}
+
+h2:hover {
+    color: #1a252f; /* Color oscuro para hover */
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #2980b9; /* Azul */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #1f6692; /* Color más oscuro para hover */
+}
+
+button:active {
+    background-color: #1c5984; /* Aún más oscuro para el click */
+}
+
+/* Estilos del botón "Volver" */
+#btnVolver {
+    background-color: #6c757d; /* Gris para el botón volver */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+#btnVolver:hover {
+    background-color: #5a6268; /* Gris oscuro para hover */
+}
+
+#btnVolver:active {
+    background-color: #444b50; /* Gris aún más oscuro para click */
+}
+
+/* Footer */
+footer {
+    background-color: #34495e; /* Azul oscuro */
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer p {
+    font-size: 16px;
+    color: #f8f9fa;
+    margin-bottom: 10px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer nav ul li {
+    display: inline;
+}
+
+footer nav ul li a {
+    color: #a5c1dd; /* Gris claro para los enlaces */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+}
+
+footer nav ul li a:hover {
+    color: #ffffff; /* Blanco para los enlaces al pasar el ratón */
+    text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+}
