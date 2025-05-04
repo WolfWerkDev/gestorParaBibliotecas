@@ -7,6 +7,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/inicio")
@@ -40,4 +41,24 @@ public class LibroController {
         System.out.println("Lista libros: " + lista);
         return ResponseEntity.ok(lista);
     }
+
+    @GetMapping("/buscar")
+    public ResponseEntity<List<LibroBuscadoDTO>> buscarLibros(@RequestParam String prefijo) {
+        // Se llmama al servicio que busca los libros por el prefijo
+        List<Libro> librosEncontrados = libroService.buscarPorPrefijo(prefijo);
+
+        // Si no se encuentran libros, devuelve una respuesta vacía
+        if (librosEncontrados.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        // Convertir los libros a DTOs
+        List<LibroBuscadoDTO> libroDTOs = librosEncontrados.stream()
+                .map(libro -> new LibroBuscadoDTO(libro.getId(), libro.getTitulo(), libro.getAutor(), libro.getGenero(), libro.getUrl()))
+                .collect(Collectors.toList());
+
+        // Devolver los DTOs
+        return ResponseEntity.ok(libroDTOs);
+    }
+
 }

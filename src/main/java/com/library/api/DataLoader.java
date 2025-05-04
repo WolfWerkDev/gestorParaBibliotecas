@@ -3,7 +3,9 @@ package com.library.api;
 import com.library.api.domain.administrador.Administrador;
 import com.library.api.domain.libro.Libro;
 import com.library.api.domain.persona.Persona;
+import com.library.api.domain.trie.Trie;
 import com.library.api.domain.usuario.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +14,14 @@ import java.util.stream.Collectors;
 @Component
 public class DataLoader {
 
+    @Autowired
+    private Trie trie;
+
     private List<Persona> personas = new ArrayList<>();
     private List<Libro> libros = new ArrayList<>();
 
-    public DataLoader() {
+    public DataLoader(Trie trie) {
+        this.trie = trie;
         // Inicialización de datos
         personas.add(new Administrador(1L, "Admin", "#1", 1020001010, true, "Director de biblioteca", "Dirección", 20));
         personas.add(new Administrador(2L, "Admin", "#2", 1014014101, true, "Administrador de biblioteca", "Gestión de recursos", 15));
@@ -40,6 +46,9 @@ public class DataLoader {
         libros.add(new Libro(15L, "Los miserables", "Victor Hugo", "Novela histórica", false, "https://th.bing.com/th/id/OIP.7xU2d-uVB8VVKge9FJtzpgHaKo?w=208&h=299&c=7&r=0&o=5&dpr=1.3&pid=1.7"));
 
 
+        for(Libro libro : libros){
+            trie.insert(libro.getTitulo());
+        }
     }
 
     public List<Persona> verAdmins() {
