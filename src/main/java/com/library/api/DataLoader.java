@@ -67,4 +67,12 @@ public class DataLoader {
     public List<Libro> verLibros(){
         return libros;
     }
+
+    public Libro libroPorTitulo(String titulo) {
+        return libros.stream()
+                .filter(l -> l.getTitulo().equalsIgnoreCase(titulo))
+                .findFirst()
+                .orElse(null);
+    }
+
 }
